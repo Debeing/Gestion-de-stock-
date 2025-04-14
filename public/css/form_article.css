@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contenu{
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 340px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    text-align: center;
+}
+.submit, input, #Eric{
+    width: 100% ;
+    padding: 10px;
+    height: 40px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.submit{
+    background-color: rgb(43, 74, 250);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
