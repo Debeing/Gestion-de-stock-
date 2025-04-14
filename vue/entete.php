@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <a href="article.html" class="active">
+                <a href="article.php" class="active">
                     <i class="bx bx-box"></i>
                     <span class="links-name">Article</span>
                 </a>
