@@ -64,12 +64,12 @@
                     <span class="links-name">Configuration</span>
                 </a>
             </li>
-            <li>
-                <a href="#" class="active">
-                    <span class="links-name" id="logout">Déconnexion</span>
-                </a>
-            </li>
         </ul>
+        <div class="logout-details">
+        <a href="#" class="active">
+            <span class="links-name" id="logout">Déconnexion</span>
+        </a>
+    </div>
     </div>
    <section class="home-section">
         <nav class="navbar">
