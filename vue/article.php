@@ -1,8 +1,8 @@
 <?php
-include"entete.php"  
+include'entete.php'  
 ?>
     <div class="form">
-        <form>
+        <form action="../model/ajoutArticle.php" method="POST">
             <div class="contenu">
                 <div class="input">
                     <label for="name">Nom de l'article</label>
