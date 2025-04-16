@@ -19,7 +19,7 @@ body{
     position: fixed;
     background-color: rgb(136, 148, 252);
     width: 200px;
-    height: 650px;
+    height: 700px;
     transition: all 0.5s ease;
 }
 .nav-links{
@@ -92,6 +92,8 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(12, 12, 12, 0.1);
 }
 .contenu{
     border-radius: 10px;
@@ -113,4 +115,33 @@ body{
     border: none;
     cursor: pointer;
     font-size: 20px;
+    width: 150px;
+}
+table.mtable{
+    width: 110%;
+    border: 1px solid white;
+}
+th{
+    display: inline-block;
+    justify-content: right;
+    text-align: right;
+    padding: 16px;
+}
+.box{
+    display: block;
+    justify-content: right;
+    align-items: right;
+}
+table.mtable, tr:nth-child(even){
+    background: white;
+}
+ .box{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    width: 800px;
+    padding: 15px 14px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(12, 12, 12, 0.1);
 }
