@@ -40,7 +40,21 @@ include'entete.php'
                             <th>date_fabrication</th>
                         </tr>
                         <?php
-                            include '../model/afficherArticle.php';
+                           $articles = getajoutArticle();
+
+                           if (!empty($articles) && is_array($articles)) {
+
+                            foreach ($articles as $key => $value){
+                        ?>
+                            <td><?php echo $value['nom_article']; ?></td>
+                            <td><?php echo $value['categorie']; ?></td>
+                            <td><?php echo $value['quantite']; ?></td>
+                            <td><?php echo $value['prix_unitaire']; ?></td>
+                            <td><?php echo $value['date_expiration']; ?></td>
+                            <td><?php echo $value['date_fabrication']; ?></td>
+                        <?php
+                            }
+                           }
                         ?>
                     </thead>
                 </table>
