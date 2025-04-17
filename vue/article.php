@@ -39,6 +39,9 @@ include'entete.php'
                             <th>date_expiration</th>
                             <th>date_fabrication</th>
                         </tr>
+                        <?php
+                            include '../model/afficherArticle.php';
+                        ?>
                     </thead>
                 </table>
             </div>
