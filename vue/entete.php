@@ -35,25 +35,25 @@ include '../model/afficherArticle.php';
             <li>
                 <a href="#" class="active">
                     <i class="bx bx-list-ul"></i>
-                    <span class="links-name">Commandes</span>
+                    <span class="links-name">Vente</span>
                 </a>
             </li>
             <li>
                 <a href="#" class="active">
                     <i class="bx bx-pie-chart-alt-2"></i>
-                    <span class="links-name">Analyses</span>
+                    <span class="links-name">Client</span>
                 </a>
             </li>
             <li>
                 <a href="#" class="active">
                     <i class="bx bx-grid-alt"></i>
-                    <span class="links-name">Stock</span>
+                    <span class="links-name">Fournisseur</span>
                 </a>
             </li>
             <li>
                 <a href="#" class="active">
                     <i class="bx bx-grid-alt"></i>
-                    <span class="links-name">Toutes les Commandes</span>
+                    <span class="links-name">Commandes</span>
                 </a>
             </li>
             <li>

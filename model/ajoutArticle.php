@@ -26,8 +26,6 @@ if (
         else {
             echo "Erreur lors de l'ajout de l'article";
         }
-   }else {
-        echo 'Une information obligatoire non renseignée';
-    }
+   }
 
 ?>
