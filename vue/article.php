@@ -1,5 +1,6 @@
 <?php
-include'entete.php'  
+include'entete.php'
+
 ?>
         <div class="form-containered">
             <div class="form">

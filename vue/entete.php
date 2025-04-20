@@ -47,7 +47,7 @@ include_once'../model/fonction.php';
             </li>
             <li>
                 <a href="#" class="active">
-                    <i class="bx bx-grid-alt"></i>
+                <i class='bx bx-cart-download'></i>
                     <span class="links-name">Fournisseur</span>
                 </a>
             </li>
@@ -59,13 +59,13 @@ include_once'../model/fonction.php';
             </li>
             <li>
                 <a href="#" class="active">
-                    <i class="bx bx-grid-alt"></i>
+                    <i class='bx bx-user'></i>
                     <span class="links-name">Utilisateur</span>
                 </a>
             </li>
             <li>
                 <a href="#" class="active">
-                    <i class="bx bx-grid-alt"></i>
+                    <i class='bx bx-cog'></i>
                     <span class="links-name">Configuration</span>
                 </a>
             </li>
