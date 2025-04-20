@@ -4,7 +4,7 @@ include'entete.php'
 ?>
   <div class="form-containered">
             <div class="form">
-                <form action="../model/ajoutArticle.php" method="POST">
+                <form action="../model/ajoutClient.php" method="POST">
                     <div class="contenu">
                         <div class="input">
                             <label for="nom">Nom<span style="color: red;">*</span> </label>
@@ -14,7 +14,7 @@ include'entete.php'
                             <label for="telephone">Téléphone<span style="color: red;">*</span></label><br>
                             <input type="number" name="telephone" placeholder="Numéro téléphone" required>
                             <label for="adresse">Adresse<span style="color: red;">*</span></label><br>
-                            <input type="text" name="adresse" placeholder="Veuillez saisir l'adresse" required><br>
+                            <input type="email" name="adresse" placeholder="Veuillez saisir l'adresse" required><br>
                             <button type="submit" class="submit">Validé</button>
                             
                             <!-- affichage du message d'erreur dans notre formulaire-->
@@ -43,18 +43,17 @@ include'entete.php'
                             <th>Date d'ajout</th>
                         </tr>
                         <?php
-                        $articles = getArticle();
+                        $clients = getClient();
 
-                        if (!empty($articles) && is_array($articles)) {
-                            foreach ($articles as $key => $value) {
+                        if (!empty($clients) && is_array($clients)) {
+                            foreach ($clients as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['nom_article']  ?></td>
-                                    <td><?= $value['categorie']  ?></td>
-                                    <td><?= $value['quantite']  ?></td>
-                                    <td><?= $value['prix_unitaire']  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_fabrication']))  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_expiration'])) ?></td>
+                                    <td><?= $value['nom']  ?></td>
+                                    <td><?= $value['prenom']  ?></td>
+                                    <td><?= $value['telephone']  ?></td>
+                                    <td><?= $value['adresse']  ?></td>
+                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date']))  ?></td>
                                 </tr>
                                 <?php
                             }

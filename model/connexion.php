@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de donnée
-session_start();
+
 
 $nom_serveur = "localhost";
 $nom_utilisateur = "root";

@@ -1,6 +1,7 @@
 <?php
 
-include_once'../model/fonction.php';
+include_once'../model/fonctionArticle.php';
+include_once'../model/fonctionClient.php';
 ?>
 
 <!DOCTYPE html>
