@@ -24,42 +24,52 @@ include'entete.php'
                             <label for="date_expiration">Date d'expiration<span style="color: red;">*</span></label><br>
                             <input type="datetime-local" name="date_expiration" required><br>
                             <button type="submit" class="submit">Validé</button>
+                            
+                            <!-- affichage du message d'erreur dans notre formulaire-->
+                            <?php
+                              if (!empty($_SESSION['message']['text'])) {
+                            ?>
+                                <div class="alert" <?=$_SESSION['message']['type'] ?> >
+                                <?=$_SESSION['message']['text']?>
+                                </div>
+                            <?php    
+                              }
+                            ?>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="box">
+        </div>
+        <div class="box">
                 <table class="mtable">
-                    <thead>
                         <tr>
-                            <th>nom_article</th>
+                            <th>nom article</th>
                             <th> categorie</th>
                             <th>quantité</th>
-                            <th> prix_unitaire</th>
-                            <th>date_expiration</th>
-                            <th>date_fabrication</th>
+                            <th> prix unitaire</th>
+                            <th>date expiration</th>
+                            <th>date fabrication</th>
                         </tr>
                         <?php
-                           $articles = getajoutArticle();
+                        $articles = getArticle();
 
-                           if (!empty($articles) && is_array($articles)) {
-
-                            foreach ($articles as $key => $value){
-                        ?>
-                            <td><?php echo $value['nom_article']; ?></td>
-                            <td><?php echo $value['categorie']; ?></td>
-                            <td><?php echo $value['quantite']; ?></td>
-                            <td><?php echo $value['prix_unitaire']; ?></td>
-                            <td><?php echo $value['date_expiration']; ?></td>
-                            <td><?php echo $value['date_fabrication']; ?></td>
-                        <?php
+                        if (!empty($articles) && is_array($articles)) {
+                            foreach ($articles as $key => $value) {
+                                ?>
+                                <tr>
+                                    <td><?= $value['nom_article']  ?></td>
+                                    <td><?= $value['categorie']  ?></td>
+                                    <td><?= $value['quantite']  ?></td>
+                                    <td><?= $value['prix_unitaire']  ?></td>
+                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_fabrication']))  ?></td>
+                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_expiration'])) ?></td>
+                                </tr>
+                                <?php
                             }
-                           }
+                        }
                         ?>
-                    </thead>
                 </table>
             </div>
-        </div>
     </section>
     
    <?php

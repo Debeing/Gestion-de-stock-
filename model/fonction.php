@@ -1,13 +1,12 @@
 
 <?php
 include '../model/connexion.php';
-include '../model/ajoutArticle.php';
-function getajoutArticle()
+function getArticle()
 {
     $sql = "SELECT * FROM article";
     $req = $GLOBALS['connexion'] -> prepare($sql);
     $req -> execute();
-
+//fetchAll permet de retourner tout les resultat de la requête 
     return $req -> fetchAll();
 }
 ?>

@@ -9,11 +9,6 @@
 body{
     background-color: #f1eeee;
 }
-.home-section{
-    display: grid;
-    width: 700px;
-    margin-left: 200px;
-}
 
 .sidebar{
     position: fixed;
@@ -87,7 +82,11 @@ body{
     font-size: 16px;
 }
 
-
+.home-section{
+    display: flex;
+    width: 700px;
+    margin-left: 200px;
+}
 .form-containered{
     display: flex;
     justify-content: center;
@@ -99,28 +98,35 @@ body{
     gap: 20px;
     margin-top: 50px;
 }
-.mtable{
+
+/*CSS POUR LE TABLEAU*/
+table.mtable{
     width: 100%;
     border-collapse: collapse;
+    width: 100%;
     border: 1px solid #ddd;
 }
-th{
+th, td{
     text-align: left;
-    padding: 12px;
+    padding: 16px;
 }
-table, .mtable tr:nth-child(even){
+table.mtable tr:nth-child(even){
     background-color: #f2f2f2;
+}
+table.mtable td{
+    padding: 10px;
 }
 .overview-boxes, .box{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
-    min-width: calc(100% / 4 - 15px);
     background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) ;
     padding: 12px 14px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 15px 0;
+    margin-top: 80px;
+    height: 100%;
+    
 }
 .overview-boxes{
     display: flex;
@@ -150,4 +156,18 @@ table, .mtable tr:nth-child(even){
     cursor: pointer;
     font-size: 20px;
     width: 150px;
+}
+
+/* A lert */
+.alert{
+    margin: 5px;
+    padding: 7px;
+    color: white;
+    border-radius: 10px ;
+}
+.alert, .danger{
+    background-color: red;
+}
+.alert, .success{
+    background-color: #25da7c;
 }

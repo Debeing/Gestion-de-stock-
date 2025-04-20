@@ -1,5 +1,6 @@
 <?php
-include '../model/afficherArticle.php';
+
+include_once'../model/fonction.php';
 ?>
 
 <!DOCTYPE html>
