@@ -40,7 +40,7 @@ include_once'../model/fonction.php';
                 </a>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="client.php" class="active">
                     <i class="bx bx-pie-chart-alt-2"></i>
                     <span class="links-name">Client</span>
                 </a>
