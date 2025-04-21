@@ -11,7 +11,13 @@ include'entete.php'
                             <input type="text" name="nom_article" id="nom_article" placeholder="Veuillez saisir le nom"><br>
                             <label for="categorie">Catégorie<span style="color: red;">*</span></label><br>
                             <select name="categorie" id="Eric" required>
-                                <option value="Voiture" class="voiture">Voiture</option>
+                                <option value="Voiture">
+                                    <div class="voiture">Voiture
+                                        <p>TOYOTA</p>
+                                        <p>MERCEDEZ</p>
+                                        <p>ZUZIKI</p>
+                                    </div>
+                                </option>
                                 <option value="pneu">pneu</option>
                                 <option value="chaisse">chaisse</option>
                                 <option value="moteur">moteur</option>
