@@ -1,7 +1,7 @@
 <?php
 
 include_once'../model/fonctionArticle.php';
-include_once'../model/fonctionClient.php';
+include_once'../model/fonctionClient.php'
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,6 @@ include_once'../model/fonctionClient.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=logout" />
     
     <title>Admin Dashboard</title>
 </head>
@@ -35,7 +34,7 @@ include_once'../model/fonctionClient.php';
                 </a>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="vente.php" class="active">
                     <i class="bx bx-list-ul"></i>
                     <span class="links-name">Vente</span>
                 </a>
@@ -47,19 +46,19 @@ include_once'../model/fonctionClient.php';
                 </a>
             </li>
             <li>
-                <a href="#" class="active">
-                <i class='bx bx-cart-download'></i>
+                <a href="../vue/fournisseur.php" class="active">
+                    <i class='bx bx-cart-download'></i>
                     <span class="links-name">Fournisseur</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="../vue/commande.php" class="active">
                     <i class="bx bx-grid-alt"></i>
                     <span class="links-name">Commandes</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="active">
+                <a href="../vue/utilisateur.php" class="active">
                     <i class='bx bx-user'></i>
                     <span class="links-name">Utilisateur</span>
                 </a>

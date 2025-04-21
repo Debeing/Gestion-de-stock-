@@ -8,21 +8,21 @@ include'entete.php'
                     <div class="contenu">
                         <div class="input">
                             <label for="nom">Nom<span style="color: red;">*</span> </label>
-                            <input type="text" name="nom" id="nom" placeholder="Veuillez saisir le nom" required><br>
+                            <input type="text" name="nom" id="nom" placeholder="Veuillez saisir le nom"><br>
                             <label for="prenom">Prénom<span style="color: red;">*</span></label><br>
-                            <input type="text" name="prenom" id="prenom" placeholder="Veuillez saisir le prénom" required><br>
+                            <input type="text" name="prenom" id="prenom" placeholder="Veuillez saisir le prénom"><br>
                             <label for="telephone">Téléphone<span style="color: red;">*</span></label><br>
-                            <input type="number" name="telephone" placeholder="Numéro téléphone" required>
+                            <input type="number" name="telephone" placeholder="Numéro téléphone">
                             <label for="adresse">Adresse<span style="color: red;">*</span></label><br>
-                            <input type="email" name="adresse" placeholder="Veuillez saisir l'adresse" required><br>
+                            <input type="text" name="adresse" placeholder="Veuillez saisir l'adresse"><br>
                             <button type="submit" class="submit">Validé</button>
                             
                             <!-- affichage du message d'erreur dans notre formulaire-->
                             <?php
                               if (!empty($_SESSION['message']['text'])) {
                             ?>
-                                <div class="alert" <?=$_SESSION['message']['type'] ?> >
-                                <?=$_SESSION['message']['text']?>
+                                <div class="alert" <?=$_SESSION['message']['type'] ?>>
+                                    <?=$_SESSION['message']['text']?>
                                 </div>
                             <?php    
                               }
@@ -40,7 +40,6 @@ include'entete.php'
                             <th> Prénom</th>
                             <th>Téléphone</th>
                             <th>Adresse</th>
-                            <th>Date d'ajout</th>
                         </tr>
                         <?php
                         $clients = getClient();
@@ -53,7 +52,6 @@ include'entete.php'
                                     <td><?= $value['prenom']  ?></td>
                                     <td><?= $value['telephone']  ?></td>
                                     <td><?= $value['adresse']  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date']))  ?></td>
                                 </tr>
                                 <?php
                             }

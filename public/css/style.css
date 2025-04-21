@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+
 }
 body{
     background-color: #f1eeee;
@@ -14,7 +15,7 @@ body{
     position: fixed;
     background-color: rgb(136, 148, 252);
     width: 200px;
-    height: 700px;
+    height:100%;
     transition: all 0.5s ease;
 }
 .nav-links{
@@ -165,9 +166,10 @@ table.mtable td{
     color: white;
     border-radius: 10px ;
 }
-.alert, .danger{
+ .Danger{
     background-color: red;
 }
-.alert, .success{
+ .success{
     background-color: #25da7c;
 }
+

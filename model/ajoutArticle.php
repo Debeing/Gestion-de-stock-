@@ -29,12 +29,12 @@ if (
     }
         else {
             $_SESSION['message']['text'] = "Erreur lors de l'ajout de l'article";
-            $_SESSION['message']['type'] = "danger";
+            $_SESSION['message']['type'] = "Danger";
             //echo "Erreur lors de l'ajout de l'article";
         }
    } else {
-    $_SESSION['message']['text'] = "Erreur lors de l'ajout de l'article";
-    $_SESSION['message']['type'] = "danger";
+    $_SESSION['message']['text'] = "Une information obligatoire non renseignée";
+    $_SESSION['message']['type'] = "Danger";
    }
   
    header('Location: ../vue/article.php');

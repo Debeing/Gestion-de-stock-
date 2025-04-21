@@ -1,6 +1,8 @@
 
 <?php
 include '../model/connexion.php';
+
+// une fonction qui recupère les articles
 function getArticle()
 {
     //une requette qui permet de selectionner tout les articles saisis dans le formulaire et de les affichés dans notre tableau
