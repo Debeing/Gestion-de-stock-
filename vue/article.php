@@ -10,18 +10,12 @@ include'entete.php'
                             <label for="nom_article">Nom de l'article <span style="color: red;">*</span> </label>
                             <input type="text" name="nom_article" id="nom_article" placeholder="Veuillez saisir le nom"><br>
                             <label for="categorie">Catégorie<span style="color: red;">*</span></label><br>
-                            <select name="categorie" id="Eric" required>
-                                <option value="Voiture">
-                                    <div class="voiture">Voiture
-                                        <p>TOYOTA</p>
-                                        <p>MERCEDEZ</p>
-                                        <p>ZUZIKI</p>
-                                    </div>
-                                </option>
+                             <select name="categorie" id="Eric" required>
+                                <option value="Voiture">Voiture</option>
                                 <option value="pneu">pneu</option>
                                 <option value="chaisse">chaisse</option>
                                 <option value="moteur">moteur</option>
-                            </select><br>
+                            </select><br> 
                             <label for="quantite">Quantité<span style="color: red;">*</span></label><br>
                             <input type="number" name="quantite" placeholder="Veuillez saisir la Quantité" >
                             <label for="prix_unitaire">Prix unitaire<span style="color: red;">*</span></label><br>
