@@ -4,7 +4,7 @@ include'entete.php'
 ?>
         <div class="form-containered">
             <div class="form">
-                <form action="<?= !empty($_GET['id']) ? "../model/ajoutArticle.php" : "../model/fonctionArticle" ?> "method="POST">
+                <form action="../model/ajoutVente.php" method="POST">
                     <div class="contenu">
                         <div class="input">
                             <input value="<?= !empty($_GET['id']) ? $article['id'] : "" ?> "type="hidden" name="id" id="id">
@@ -17,7 +17,7 @@ include'entete.php'
                                 if (!empty($articles) && is_array($articles)) {
                                     foreach ($articles as $key => $value) {
                                         ?>
-                                        <option value="<?= $value['id'] ?>"><?= $value['nom_article']. " - " .$value['quantite']. " disponible" ?></option>
+                                        <option  value="<?= $value['id'] ?>"><?= $value['nom_article']. " - " .$value['quantite']. " disponible" ?></option>
                                         <?php
                                     }
                                 }
@@ -63,27 +63,23 @@ include'entete.php'
         <div class="box">
                 <table class="mtable">
                         <tr>
-                            <th>nom article</th>
-                            <th> categorie</th>
+                            <th>Article</th>
+                            <th> Client</th>
                             <th>quantité</th>
-                            <th> prix unitaire</th>
-                            <th>date expiration</th>
-                            <th>date fabrication</th>
+                            <th> prix</th>
                         </tr>
                         <!-- Vérification de la table liste, si elle n'est pas vide elle affiche ces informations au niveau du tableau -->
                         <?php
-                        $articles = getArticle();
+                        $ventes = getVente();
 
-                        if (!empty($articles) && is_array($articles)) {
-                            foreach ($articles as $key => $value) {
+                        if (!empty($ventes) && is_array($vente)) {
+                            foreach ($ventes as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['nom_article']  ?></td>
-                                    <td><?= $value['categorie']  ?></td>
+                                    <td><?= $value['Article']  ?></td>
+                                    <td><?= $value['Client']  ?></td>
                                     <td><?= $value['quantite']  ?></td>
-                                    <td><?= $value['prix_unitaire']  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_fabrication']))  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_expiration'])) ?></td>
+                                    <td><?= $value['prix']  ?></td>
                                 </tr>
                                 <?php
                             }
