@@ -1,12 +1,12 @@
 <?php
 include 'connexion.php';
-include_once"fonctionVente.php";
 
 if (
     !empty($_POST['id_article'])
    && !empty($_POST['id_client'])
    && !empty($_POST['quantite'])
    && !empty($_POST['prix'])
+   && !empty($_POST['date_vente'])
    ){
 
     $article = getArticle($_POST['id_article']);
@@ -56,6 +56,6 @@ if (
     $_SESSION['message']['type'] = "Danger";
    }
     
-   header('Location: ../vue/article.php');
+   header('Location: ../vue/vente.php');
 ?>
 

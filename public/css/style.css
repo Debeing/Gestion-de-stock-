@@ -49,12 +49,12 @@ body{
 }
 .navbar{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 200px;
     background-color: white;
     height: 70px;
-    width: 90%;
+    width: 100%;
     position: fixed;
 }
 .navbar a{

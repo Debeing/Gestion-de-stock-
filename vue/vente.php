@@ -4,7 +4,7 @@ include'entete.php'
 ?>
         <div class="form-containered">
             <div class="form">
-                <form action="../model/ajoutVente.php" method="POST">
+                <form action="<?= !empty( $_GET['id']) ? "../model/fonctionVente.php" : "../model/ajouteVente.php" ?>"  method="POST">
                     <div class="contenu">
                         <div class="input">
                             <input value="<?= !empty($_GET['id']) ? $article['id'] : "" ?> "type="hidden" name="id" id="id">
@@ -72,7 +72,7 @@ include'entete.php'
                         <?php
                         $ventes = getVente();
 
-                        if (!empty($ventes) && is_array($vente)) {
+                        if (!empty($ventes) && is_array($ventes)) {
                             foreach ($ventes as $key => $value) {
                                 ?>
                                 <tr>
