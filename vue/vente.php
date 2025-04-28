@@ -4,7 +4,7 @@ include'entete.php'
 ?>
         <div class="form-containered">
             <div class="form">
-                <form action="<?= !empty( $_GET['id']) ? "../model/fonctionVente.php" : "../model/ajouteVente.php" ?>"  method="POST">
+                <form action="../model/ajouteVente.php" method="POST">
                     <div class="contenu">
                         <div class="input">
                             <input value="<?= !empty($_GET['id']) ? $article['id'] : "" ?> "type="hidden" name="id" id="id">

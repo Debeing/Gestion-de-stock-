@@ -2,36 +2,27 @@
 include'entete.php'
 
 ?>
-        <div class="form-containered">
+  <div class="form-containered">
             <div class="form">
-                <form action="../model/ajoutArticle.php" method="POST">
+                <form action="../model/ajoutClient.php" method="POST">
                     <div class="contenu">
                         <div class="input">
-                            <label for="nom_article">Nom de l'article <span style="color: red;">*</span> </label>
-                            <input type="text" name="nom_article" id="nom_article" placeholder="Veuillez saisir le nom"><br>
-                            <label for="categorie">Catégorie<span style="color: red;">*</span></label><br>
-                            <select name="categorie" id="Eric" required>
-                                <option value="Voiture" class="voiture">Voiture</option>
-                                <option value="pneu">pneu</option>
-                                <option value="chaisse">chaisse</option>
-                                <option value="moteur">moteur</option>
-                            </select><br>
-                            <label for="quantite">Quantité<span style="color: red;">*</span></label><br>
-                            <input type="number" name="quantite" placeholder="Veuillez saisir la Quantité" >
-                            <label for="prix_unitaire">Prix unitaire<span style="color: red;">*</span></label><br>
-                            <input type="number" name="prix_unitaire" placeholder="Veuillez saisir le Prix unitaire"><br>
-                            <label for="date_fabrication">Date de fabrication<span style="color: red;">*</span></label><br>
-                            <input type="datetime-local" name="date_fabrication"><br>
-                            <label for="date_expiration">Date d'expiration<span style="color: red;">*</span></label><br>
-                            <input type="datetime-local" name="date_expiration"><br>
+                            <label for="nom">Nom<span style="color: red;">*</span> </label>
+                            <input type="text" name="nom" id="nom" placeholder="Veuillez saisir le nom"><br>
+                            <label for="prenom">Prénom<span style="color: red;">*</span></label><br>
+                            <input type="text" name="prenom" id="prenom" placeholder="Veuillez saisir le prénom"><br>
+                            <label for="telephone">Téléphone<span style="color: red;">*</span></label><br>
+                            <input type="number" name="telephone" placeholder="Numéro téléphone">
+                            <label for="adresse">Adresse<span style="color: red;">*</span></label><br>
+                            <input type="text" name="adresse" placeholder="Veuillez saisir l'adresse"><br>
                             <button type="submit" class="submit">Validé</button>
                             
                             <!-- affichage du message d'erreur dans notre formulaire-->
                             <?php
                               if (!empty($_SESSION['message']['text'])) {
                             ?>
-                                <div class="alert" <?=$_SESSION['message']['type'] ?> >
-                                <?=$_SESSION['message']['text']?>
+                                <div class="alert" <?=$_SESSION['message']['type'] ?>>
+                                    <?=$_SESSION['message']['text']?>
                                 </div>
                             <?php    
                               }
@@ -41,30 +32,26 @@ include'entete.php'
                 </form>
             </div>
         </div>
+        </div>
         <div class="box">
                 <table class="mtable">
                         <tr>
-                            <th>nom article</th>
-                            <th> categorie</th>
-                            <th>quantité</th>
-                            <th> prix unitaire</th>
-                            <th>date expiration</th>
-                            <th>date fabrication</th>
+                            <th>nom</th>
+                            <th> Prénom</th>
+                            <th>Téléphone</th>
+                            <th>Adresse</th>
                         </tr>
-                        <!-- Vérification de la table liste, si elle n'est pas vide elle affiche ces informations au niveau du tableau -->
                         <?php
-                        $articles = getArticle();
+                        $clients = getClient();
 
-                        if (!empty($articles) && is_array($articles)) {
-                            foreach ($articles as $key => $value) {
+                        if (!empty($clients) && is_array($clients)) {
+                            foreach ($clients as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['nom_article']  ?></td>
-                                    <td><?= $value['categorie']  ?></td>
-                                    <td><?= $value['quantite']  ?></td>
-                                    <td><?= $value['prix_unitaire']  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_fabrication']))  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_expiration'])) ?></td>
+                                    <td><?= $value['nom']  ?></td>
+                                    <td><?= $value['prenom']  ?></td>
+                                    <td><?= $value['telephone']  ?></td>
+                                    <td><?= $value['adresse']  ?></td>
                                 </tr>
                                 <?php
                             }
@@ -73,7 +60,7 @@ include'entete.php'
                 </table>
             </div>
     </section>
-    
-   <?php
-include'pied.php'
+  
+<?php
+include'pied.php';
 ?>

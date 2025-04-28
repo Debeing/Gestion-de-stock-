@@ -6,7 +6,6 @@ if (
    && !empty($_POST['id_client'])
    && !empty($_POST['quantite'])
    && !empty($_POST['prix'])
-   && !empty($_POST['date_vente'])
    ){
 
     $article = getArticle($_POST['id_article']);

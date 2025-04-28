@@ -4,26 +4,45 @@ include'entete.php'
 ?>
         <div class="form-containered">
             <div class="form">
-                <form action="../model/ajoutArticle.php" method="POST">
+                <form action="<?= !empty( $_GET['id']) ? "../model/fonctionVente.php" : "../model/ajouteVente.php" ?>"  method="POST">
                     <div class="contenu">
                         <div class="input">
-                            <label for="nom_article">Nom de l'article <span style="color: red;">*</span> </label>
-                            <input type="text" name="nom_article" id="nom_article" placeholder="Veuillez saisir le nom"><br>
-                            <label for="categorie">Catégorie<span style="color: red;">*</span></label><br>
-                            <select name="categorie" id="Eric" required>
-                                <option value="Voiture" class="voiture">Voiture</option>
-                                <option value="pneu">pneu</option>
-                                <option value="chaisse">chaisse</option>
-                                <option value="moteur">moteur</option>
+                            <input value="<?= !empty($_GET['id']) ? $article['id'] : "" ?> "type="hidden" name="id" id="id">
+                            <label for="id_article">Vente<span style="color: red;">*</span></label><br>
+                            <select name="id_article" id="id_article">
+
+                                // Récupération de la liste des articles dans la base de données 
+                                <?php
+                                $articles = getArticle();
+                                if (!empty($articles) && is_array($articles)) {
+                                    foreach ($articles as $key => $value) {
+                                        ?>
+                                        <option  value="<?= $value['id'] ?>"><?= $value['nom_article']. " - " .$value['quantite']. " disponible" ?></option>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </select><br>
+
+                            <label for="id_client">Client<span style="color: red;">*</span></label><br>
+                            <select name="id_client" id="id_client">
+
+                                // Récupération de la liste des Fournisseurs dans la base de données 
+                                <?php
+                                $fournisseur = getFournisseur();
+                                if (!empty($clients) && is_array($clients)) {
+                                    foreach ($clients as $key => $value) {
+                                        ?>
+                                        <option value="<?= $value['id'] ?>"><?= $value['nom'] . " " . $value['prenom'] ?></option>
+                                        <?php
+                                    }
+                                }
+                                ?>
                             </select><br>
                             <label for="quantite">Quantité<span style="color: red;">*</span></label><br>
                             <input type="number" name="quantite" placeholder="Veuillez saisir la Quantité" >
-                            <label for="prix_unitaire">Prix unitaire<span style="color: red;">*</span></label><br>
+                            <label for="prix">Prix<span style="color: red;">*</span></label><br>
                             <input type="number" name="prix_unitaire" placeholder="Veuillez saisir le Prix unitaire"><br>
-                            <label for="date_fabrication">Date de fabrication<span style="color: red;">*</span></label><br>
-                            <input type="datetime-local" name="date_fabrication"><br>
-                            <label for="date_expiration">Date d'expiration<span style="color: red;">*</span></label><br>
-                            <input type="datetime-local" name="date_expiration"><br>
                             <button type="submit" class="submit">Validé</button>
                             
                             <!-- affichage du message d'erreur dans notre formulaire-->
@@ -44,27 +63,23 @@ include'entete.php'
         <div class="box">
                 <table class="mtable">
                         <tr>
-                            <th>nom article</th>
-                            <th> categorie</th>
+                            <th>Article</th>
+                            <th> Client</th>
                             <th>quantité</th>
-                            <th> prix unitaire</th>
-                            <th>date expiration</th>
-                            <th>date fabrication</th>
+                            <th> prix</th>
                         </tr>
                         <!-- Vérification de la table liste, si elle n'est pas vide elle affiche ces informations au niveau du tableau -->
                         <?php
-                        $articles = getArticle();
+                        $ventes = getVente();
 
-                        if (!empty($articles) && is_array($articles)) {
-                            foreach ($articles as $key => $value) {
+                        if (!empty($ventes) && is_array($ventes)) {
+                            foreach ($ventes as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['nom_article']  ?></td>
-                                    <td><?= $value['categorie']  ?></td>
+                                    <td><?= $value['Article']  ?></td>
+                                    <td><?= $value['Client']  ?></td>
                                     <td><?= $value['quantite']  ?></td>
-                                    <td><?= $value['prix_unitaire']  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_fabrication']))  ?></td>
-                                    <td><?= date('d/m/Y H:i:s', strtotime($value['date_expiration'])) ?></td>
+                                    <td><?= $value['prix']  ?></td>
                                 </tr>
                                 <?php
                             }
