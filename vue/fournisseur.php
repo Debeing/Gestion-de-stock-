@@ -4,7 +4,7 @@ include'entete.php'
 ?>
   <div class="form-containered">
             <div class="form">
-                <form action="../model/ajoutClient.php" method="POST">
+                <form action="../model/ajoutFournisseur.php" method="POST">
                     <div class="contenu">
                         <div class="input">
                             <label for="nom">Nom<span style="color: red;">*</span> </label>
